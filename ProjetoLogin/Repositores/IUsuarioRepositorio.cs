@@ -1,6 +1,10 @@
-﻿namespace ProjetoLogin.Repositores
+﻿using ProjetoLogin.Models;
+
+namespace ProjetoLogin.Repositores
 {
-    public class UIsuarioRepositorio
+    public interface IUsuarioRepositorio
     {
+        Task<bool> Cadastrar(UsuarioModel usuario, string senhaPura);
+        Task<UsuarioModel?> BuscarEmail(string email);
     }
 }
